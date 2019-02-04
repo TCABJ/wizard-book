@@ -1,0 +1,11 @@
+(define (square x) (* x x))
+
+(define (sum-two-largest-squares x y z)
+  (+ (if (> x y)
+         (square x)
+         (square y))
+     (cond ((or (> z x)
+                (> z y))
+            (square z))
+           ((> x y) (square y))
+           (else (square x)))))
